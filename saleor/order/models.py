@@ -368,6 +368,9 @@ class OrderNote(models.Model):
     content = models.CharField(max_length=250)
     is_public = models.BooleanField(default=True)
 
+    class Meta:
+        ordering = ('-date',)
+
     def __str__(self):
         return str((pgettext_lazy(
             'Order note str',
